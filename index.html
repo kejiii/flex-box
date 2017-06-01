@@ -12,7 +12,7 @@
 			padding: 0px;
 		}
 
-		.containter {
+		.container {
 			width: 600px;
 			margin: 0px auto;
 		}
@@ -34,7 +34,7 @@
 		  display: block;
 		}
 
-		.flexContainer {
+		#flexContainer {
 		  display: flex;
 		  flex-wrap: wrap;
 		  height: 600px;
@@ -42,7 +42,7 @@
 		  background: #eee;
 		}
 
-		.flexContainer > div {
+		#flexContainer > div {
 		  min-width: 150px;
 		  min-height: 150px;
 		  border: 1px dashed #333;
@@ -53,7 +53,7 @@
 		  color: #fff;
 		}
 
-		.flexContainer > .bigBox {
+		#flexContainer > .bigBox {
 		  font-size: 1.5em;
 		  min-width: 250px;
 		  min-height: 250px;
@@ -66,7 +66,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="containter">
+		<div class="container">
 			<h1>Flex Box Playground</h1>
 			<form>
 				<ul>
@@ -104,7 +104,7 @@
 					</li>
 				</ul>
 			</form>
-			<div class="flexContainer">
+			<div id="flexContainer">
 				<div>1</div>
 				<div class="bigBox">2</div>
 				<div>3</div>
@@ -118,12 +118,12 @@
 		</div>
 		<script>
 			var form = document.forms[0],
-    		flex = document.getElementById('flex');
+    		flexContainer = document.getElementById('flexContainer');
 			form.addEventListener('change', function() {
-			  flex.style.flexDirection = form.elements.fd.value;
-			  flex.style.justifyContent = form.elements.jc.value;
-			  flex.style.alignItems = form.elements.ai.value;
-			  flex.style.alignContent = form.elements.ac.value;
+			  flexContainer.style.flexDirection = form.elements.fd.value;
+			  flexContainer.style.justifyContent = form.elements.jc.value;
+			  flexContainer.style.alignItems = form.elements.ai.value;
+			  flexContainer.style.alignContent = form.elements.ac.value;
 			});
 		</script>
 	</body>
