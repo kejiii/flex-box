@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Flex Box Examples</title>
+		<link href="styles.css" type="text/css" rel="stylesheet" />
+		<style>
+		* {
+			font-family: sans-serif;
+			box-sizing: border-box;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.containter {
+			width: 600px;
+			margin: 0px auto;
+		}
+
+		ul {
+		  display: flex;
+		  flex-flow: row wrap;
+		  padding: 0;
+		  list-style: none;
+		  margin: 20px auto;
+		}
+
+		li {
+		  padding: 0 15px;
+		  line-height: 1.7em;
+		}
+
+		label {
+		  display: block;
+		}
+
+		#flex {
+		  display: flex;
+		  flex-wrap: wrap;
+		  height: 600px;
+		  border: 1px solid #000;
+		  background: #eee;
+		}
+
+		#flex > div {
+		  min-width: 150px;
+		  min-height: 150px;
+		  border: 1px dashed #333;
+		  background: #666;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  color: #fff;
+		}
+
+		#flex > .big {
+		  font-size: 1.5em;
+		  min-width: 250px;
+		  min-height: 250px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="containter">
+			<h1>Flex Box Example</h1>
+			<form>
+				<ul>
+					<li><strong>flex-direction</strong>
+						<label><input type="radio" name="fd" value="row" checked /> row</label>
+						<label><input type="radio" name="fd" value="row-reverse" /> row-reverse</label>
+						<label><input type="radio" name="fd" value="column" /> column</label>
+						<label><input type="radio" name="fd" value="column-reverse" /> column-reverse</label>
+					</li>
+					<li><strong>justify-content</strong>
+						<label><input type="radio" name="jc" value="flex-start" checked /> flex-start</label>
+						<label><input type="radio" name="jc" value="flex-end" /> flex-end</label>
+						<label><input type="radio" name="jc" value="center" /> center</label>
+						<label><input type="radio" name="jc" value="space-between" /> space-between</label>
+						<label><input type="radio" name="jc" value="space-around" /> space-around</label>
+					</li>
+					<li><strong>align-items</strong>
+						<label><input type="radio" name="ai" value="flex-start" /> flex-start</label>
+						<label><input type="radio" name="ai" value="flex-end" /> flex-end</label>
+						<label><input type="radio" name="ai" value="center" /> center</label>
+						<label><input type="radio" name="ai" value="baseline" /> baseline</label>
+						<label><input type="radio" name="ai" value="stretch" checked /> stretch</label>
+					</li>
+					<li><strong>align-content</strong>
+						<label><input type="radio" name="ac" value="flex-start" /> flex-start</label>
+						<label><input type="radio" name="ac" value="flex-end" /> flex-end</label>
+						<label><input type="radio" name="ac" value="center" /> center</label>
+						<label><input type="radio" name="ac" value="space-between" /> space-between</label>
+						<label><input type="radio" name="ac" value="space-around" /> space-around</label>
+						<label><input type="radio" name="ac" value="stretch" checked /> stretch</label>
+					</li>
+				</ul>
+			</form>
+			<div id="flex">
+				<div>1</div>
+				<div class="big">2</div>
+				<div>3</div>
+				<div>4</div>
+				<div class="big">5</div>
+				<div>6</div>
+			</div>
+		</div>
+		<script>
+			var form = document.forms[0],
+    		flex = document.getElementById('flex');
+			form.addEventListener('change', function() {
+			  flex.style.flexDirection = form.elements.fd.value;
+			  flex.style.justifyContent = form.elements.jc.value;
+			  flex.style.alignItems = form.elements.ai.value;
+			  flex.style.alignContent = form.elements.ac.value;
+			});
+		</script>
+	</body>
+</html>
