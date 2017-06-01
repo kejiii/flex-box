@@ -34,7 +34,7 @@
 		  display: block;
 		}
 
-		#flex {
+		.flexContainer {
 		  display: flex;
 		  flex-wrap: wrap;
 		  height: 600px;
@@ -42,7 +42,7 @@
 		  background: #eee;
 		}
 
-		#flex > div {
+		.flexContainer > div {
 		  min-width: 150px;
 		  min-height: 150px;
 		  border: 1px dashed #333;
@@ -53,16 +53,21 @@
 		  color: #fff;
 		}
 
-		#flex > .big {
+		.flexContainer > .bigBox {
 		  font-size: 1.5em;
 		  min-width: 250px;
 		  min-height: 250px;
+		}
+
+		.credit {
+			text-align: center;
+			margin-top: 60px;
 		}
 		</style>
 	</head>
 	<body>
 		<div class="containter">
-			<h1>Flex Box Example</h1>
+			<h1>Flex Box Playground</h1>
 			<form>
 				<ul>
 					<li><strong>flex-direction</strong>
@@ -99,13 +104,16 @@
 					</li>
 				</ul>
 			</form>
-			<div id="flex">
+			<div class="flexContainer">
 				<div>1</div>
-				<div class="big">2</div>
+				<div class="bigBox">2</div>
 				<div>3</div>
 				<div>4</div>
-				<div class="big">5</div>
+				<div class="bigBox">5</div>
 				<div>6</div>
+			</div>
+			<div class="credit">
+				Credit <a href="https://stackoverflow.com/a/31258310" target="_blank">here</a>.  Much thanks! &#9786;
 			</div>
 		</div>
 		<script>
